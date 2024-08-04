@@ -1,0 +1,21 @@
+{
+  "name": "reportphising-node",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "chromedriver": "^127.0.0",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "playwright-core": "^1.45.3",
+    "recaptcha-solver": "^0.3.0",
+    "selenium-webdriver": "^4.23.0"
+  }
+}

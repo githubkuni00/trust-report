@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <title>TrustReport - Phishing Report Tool</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">TrustReport - Bulking Report Phishing</h1>
+        <p class="desc">Jika Anda yakin bahwa suatu URL mengandung konten phishing, menyebarkan malware, atau berpotensi membahayakan, silakan laporkan di sini. Dengan melaporkan, Anda juga membantu memberitahukan Google tentang potensi penyalahgunaan merek dagang.</p>
+        <form id="reportForm" action="/report" method="POST">
+            <label for="phishLinks">Phishing Links (masukkan perbaris)</label>
+            <textarea id="phishLinks" name="phishLinks" required oninput="updateLineCount('phishLinks', 'phishLineCount')"></textarea>
+            <div id="phishLineCount" class="line-count">Total Urls: 0</div>
+
+            <label for="messages">Messages (masukkan perbaris)</label>
+            <textarea id="messages" name="messages" required oninput="updateLineCount('messages', 'messageLineCount')"></textarea>
+            <div id="messageLineCount" class="line-count">Total Pesan: 0</div>
+
+            <button type="submit">LAPOR SEKARANG</button>
+        </form>
+    </div>
+
+    <script>
+        // Function to update line count
+        function updateLineCount(textareaId, countId) {
+            const textarea = document.getElementById(textareaId);
+            const lineCount = textarea.value.split('\n').filter(line => line.trim() !== '').length;
+            document.getElementById(countId).textContent = `Total lines: ${lineCount}`;
+        }
+
+        // Example function to simulate output in the terminal
+        function updateTerminalOutput(message) {
+            const terminal = document.getElementById('outputTerminal');
+            terminal.textContent += message + '\n'; // Append new message
+            terminal.scrollTop = terminal.scrollHeight; // Scroll to the bottom
+        }
+
+        // Simulate progress updates (this would normally be handled by your server)
+        const simulateProgress = () => {
+            const messages = [
+                "Starting report generation...",
+                "Processing phishing links...",
+                "Checking link: example.com",
+                "Link example.com reported successfully.",
+                "Report generation completed."
+            ];
+            messages.forEach((msg, index) => {
+                setTimeout(() => updateTerminalOutput(msg), index * 2000); // Update every 2 seconds
+            });
+        };
+
+        // Start simulation on page load
+        window.onload = simulateProgress;
+    </script>
+</body>
+</html>
