@@ -1,5 +1,0 @@
--------------------------------
-REPORT PHISHING | 02 Agustus 2024
--------------------------------
-[PROXY: 45.206.21.254:2000] https://library.forda-mof.org/ ( Report Berhasil! )
-[PROXY: 154.200.20.29:2000] https://repository.thamrin.ac.id/CACHE/?alternatif_id=wdbos ( Report Berhasil! )
